@@ -6,7 +6,102 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Book Log App</title>
+    <title>Book Log</title>
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <h1>Book Log</h1>
+    </nav>
+
+    <div class="main-container">
+      <!-- Book List Container -->
+      <div id="bookListContainer">
+        <h2>Books List</h2>
+        <div id="bookList"></div>
+        <div
+          id="noBooksMessage"
+          style="display: none"
+        >
+          No books added, add your book!
+        </div>
+      </div>
+
+      <!-- Add Book Form Container -->
+      <div id="addBookFormContainer">
+        <h2>Add a New Book</h2>
+        <div class="input-row">
+          <input
+            type="text"
+            id="bookTitle"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            id="bookAuthor"
+            placeholder="Author"
+            required
+          />
+        </div>
+        <div class="input-row">
+          <input
+            type="text"
+            id="bookGenre"
+            placeholder="Genre"
+            required
+          />
+          <input
+            type="number"
+            id="bookRating"
+            placeholder="Rating (1-5)"
+            max="5"
+            required
+          />
+        </div>
+        <button id="submitBookBtn">Submit</button>
+        <button id="cancelBookBtn">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Horizontal Line -->
+    <hr />
+
+    <!-- AI Chatbot Container -->
+    <div id="chatbotContainer">
+      <h2>AI Chatbot Interaction</h2>
+      <button id="chatbotBtn">Chat with Bot</button>
+      <div
+        id="chatbotWindow"
+        style="display: none"
+      >
+        <input
+          type="text"
+          id="chatbotInput"
+          placeholder="Ask me anything..."
+        />
+        <div id="chatbotResponse"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Book Log. All Rights Reserved.</p>
+      <p>
+        <a href="#">Contact</a> |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a>
+      </p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script
+      type="module"
+      src="js/script.js"
+    ></script>
+  </body>
 </html>
