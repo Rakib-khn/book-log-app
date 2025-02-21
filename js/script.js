@@ -31,8 +31,9 @@ const db = getFirestore(app);
 document
   .getElementById('addBookBtn')
   .addEventListener('click', () => {
-    document.getElementById('addBookForm').style.display =
-      'block';
+    document.getElementById(
+      'addBookFormContainer'
+    ).style.display = 'block';
     document.getElementById('bookTitle').value = '';
     document.getElementById('bookAuthor').value = '';
     document.getElementById('bookGenre').value = '';
@@ -46,8 +47,9 @@ document
 document
   .getElementById('cancelBookBtn')
   .addEventListener('click', () => {
-    document.getElementById('addBookForm').style.display =
-      'none';
+    document.getElementById(
+      'addBookFormContainer'
+    ).style.display = 'none'; // Correct ID
   });
 
 document
@@ -77,8 +79,8 @@ document
         });
         alert('Book updated!');
         document.getElementById(
-          'addBookForm'
-        ).style.display = 'none';
+          'addBookFormContainer'
+        ).style.display = 'none'; // Correct ID
         loadBooks();
       } catch (error) {
         console.error('Error updating document: ', error);
@@ -94,8 +96,8 @@ document
         });
         alert('Book added!');
         document.getElementById(
-          'addBookForm'
-        ).style.display = 'none';
+          'addBookFormContainer'
+        ).style.display = 'none'; // Correct ID
         loadBooks();
       } catch (error) {
         console.error('Error adding document: ', error);
@@ -164,50 +166,9 @@ function editBook(id, book) {
     id;
 
   // Show the add/edit form
-  document.getElementById('addBookForm').style.display =
-    'block';
-}
-
-// AI Chatbot Integration (Dialogflow API)
-const chatbotBtn = document.getElementById('chatbotBtn');
-const chatbotWindow =
-  document.getElementById('chatbotWindow');
-const chatbotInput =
-  document.getElementById('chatbotInput');
-const chatbotResponse = document.getElementById(
-  'chatbotResponse'
-);
-
-chatbotBtn.addEventListener('click', () => {
-  chatbotWindow.style.display = 'block';
-});
-
-chatbotInput.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    const message = chatbotInput.value;
-    chatbotInput.value = '';
-
-    // Send message to Dialogflow API
-    sendToDialogflow(message);
-  }
-});
-
-function sendToDialogflow(message) {
-  const request = {
-    queryInput: {
-      text: {
-        text: message,
-        languageCode: 'en-US',
-      },
-    },
-  };
-
-  dialogflow
-    .detectIntent('YOUR_PROJECT_ID', request)
-    .then((response) => {
-      chatbotResponse.innerText =
-        response.queryResult.fulfillmentText;
-    });
+  document.getElementById(
+    'addBookFormContainer'
+  ).style.display = 'block';
 }
 
 window.onload = loadBooks;

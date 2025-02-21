@@ -18,57 +18,62 @@
       <h1>Book Log</h1>
     </nav>
 
-    <div class="main-container">
-      <!-- Book List Container -->
-      <div id="bookListContainer">
-        <h2>Books List</h2>
-        <div id="bookList"></div>
-        <div
-          id="noBooksMessage"
-          style="display: none"
-        >
-          No books added, add your book!
-        </div>
-      </div>
+    <!-- Add New Book Button -->
+    <div class="add-book-container">
+      <button id="addBookBtn">Add New Book</button>
+    </div>
 
-      <!-- Add Book Form Container -->
-      <div id="addBookFormContainer">
-        <h2>Add a New Book</h2>
-        <div class="input-row">
-          <input
-            type="text"
-            id="bookTitle"
-            placeholder="Title"
-            required
-          />
-          <input
-            type="text"
-            id="bookAuthor"
-            placeholder="Author"
-            required
-          />
-        </div>
-        <div class="input-row">
-          <input
-            type="text"
-            id="bookGenre"
-            placeholder="Genre"
-            required
-          />
-          <input
-            type="number"
-            id="bookRating"
-            placeholder="Rating (1-5)"
-            max="5"
-            required
-          />
-        </div>
-        <button id="submitBookBtn">Submit</button>
-        <button id="cancelBookBtn">Cancel</button>
+    <!-- Add Book Form Container -->
+    <div
+      id="addBookFormContainer"
+      style="display: none"
+    >
+      <h2>Add a New Book</h2>
+      <div class="input-row">
+        <input
+          type="text"
+          id="bookTitle"
+          placeholder="Title"
+          required
+        />
+        <input
+          type="text"
+          id="bookAuthor"
+          placeholder="Author"
+          required
+        />
+      </div>
+      <div class="input-row">
+        <input
+          type="text"
+          id="bookGenre"
+          placeholder="Genre"
+          required
+        />
+        <input
+          type="number"
+          id="bookRating"
+          placeholder="Rating (1-5)"
+          max="5"
+          required
+        />
+      </div>
+      <button id="submitBookBtn">Submit</button>
+      <button id="cancelBookBtn">Cancel</button>
+    </div>
+
+    <!-- Book List Container -->
+    <div id="bookListContainer">
+      <h2>Books List</h2>
+      <div id="bookList"></div>
+      <div
+        id="noBooksMessage"
+        style="display: none"
+      >
+        No books added, add your book!
       </div>
     </div>
 
-    <!-- Horizontal Line -->
     <hr />
 
     <!-- AI Chatbot Container -->
