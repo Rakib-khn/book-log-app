@@ -39,9 +39,9 @@ document
     document.getElementById('bookGenre').value = '';
     document.getElementById('bookRating').value = '';
     document.getElementById('submitBookBtn').textContent =
-      'Submit'; // Reset button text
+      'Submit';
     delete document.getElementById('submitBookBtn').dataset
-      .bookId; // Clear the bookId
+      .bookId;
   });
 
 document
@@ -49,7 +49,7 @@ document
   .addEventListener('click', () => {
     document.getElementById(
       'addBookFormContainer'
-    ).style.display = 'none'; // Correct ID
+    ).style.display = 'none';
   });
 
 document
@@ -80,7 +80,7 @@ document
         alert('Book updated!');
         document.getElementById(
           'addBookFormContainer'
-        ).style.display = 'none'; // Correct ID
+        ).style.display = 'none';
         loadBooks();
       } catch (error) {
         console.error('Error updating document: ', error);
@@ -97,7 +97,7 @@ document
         alert('Book added!');
         document.getElementById(
           'addBookFormContainer'
-        ).style.display = 'none'; // Correct ID
+        ).style.display = 'none';
         loadBooks();
       } catch (error) {
         console.error('Error adding document: ', error);
@@ -108,7 +108,7 @@ document
 // Load Books from Firestore
 async function loadBooks() {
   const bookList = document.getElementById('bookList');
-  bookList.innerHTML = ''; // Clear existing books
+  bookList.innerHTML = '';
 
   const querySnapshot = await getDocs(
     collection(db, 'books')
