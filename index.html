@@ -18,9 +18,21 @@
       <h1>Book Log</h1>
     </nav>
 
+    <!-- Authentication Container -->
+    <div id="authContainer">
+      <button id="googleSignInBtn">
+        Sign In with Google
+      </button>
+    </div>
+
     <!-- Add New Book Button -->
     <div class="add-book-container">
-      <button id="addBookBtn">Add New Book</button>
+      <button
+        id="addBookBtn"
+        style="display: none"
+      >
+        Add New Book
+      </button>
     </div>
 
     <!-- Add Book Form Container -->
@@ -103,7 +115,11 @@
       </p>
     </footer>
 
-    <!-- js file -->
+    <!-- js files -->
+    <script
+      type="module"
+      src="js/auth.js"
+    ></script>
     <script
       type="module"
       src="js/script.js"
