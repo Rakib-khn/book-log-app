@@ -29,11 +29,9 @@ document
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log('Signed in as:', user.displayName);
-      // Hide sign-in container
       document.getElementById(
         'authContainer'
       ).style.display = 'none';
-      // Show add book button
       document.getElementById('addBookBtn').style.display =
         'block';
     } catch (error) {

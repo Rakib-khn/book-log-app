@@ -7,7 +7,7 @@ body {
   color: #333;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures the body takes full height */
+  min-height: 100vh;
 }
 
 /* Navbar Styles */
@@ -153,21 +153,21 @@ nav h1 {
 
 #addBookFormContainer input {
   width: 100%;
-  padding: 18px; /* Increased padding */
-  font-size: 15px; /* Larger text size */
+  padding: 18px;
+  font-size: 15px;
   border: 1px solid #ccc;
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
   box-sizing: border-box;
   margin-bottom: 8px;
   transition: border-color 0.3s ease;
-  background-color: #fafafa; /* Light background color */
-  height: 50px; /* Set a good height for the input fields */
+  background-color: #fafafa;
+  height: 50px;
 }
 
 #addBookFormContainer input:focus {
-  border-color: #4caf50; /* Green border color on focus */
-  outline: none; /* Remove default outline on focus */
-  background-color: #fff; /* Slightly different background color when focused */
+  border-color: #4caf50;
+  outline: none;
+  background-color: #fff;
 }
 
 /* Buttons Styling */
@@ -299,7 +299,7 @@ footer {
   font-size: 16px;
   width: auto;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  margin-top: auto; /* Pushes the footer to the bottom */
+  margin-top: auto;
 }
 
 footer a {

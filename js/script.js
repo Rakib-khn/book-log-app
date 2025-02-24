@@ -1,4 +1,4 @@
-// Import Firebase functions
+// Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js';
 import {
   getFirestore,
@@ -8,7 +8,7 @@ import {
   deleteDoc,
   doc,
   updateDoc,
-  getDoc, // <-- Add this import for getDoc
+  getDoc,
 } from 'https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js';
 import {
   getAuth,
@@ -28,7 +28,6 @@ const firebaseConfig = {
   measurementId: 'G-C03T71LP5N',
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
@@ -76,7 +75,6 @@ document
       );
       return;
     }
-    // Reset the form when clicking to add a new book
     document.getElementById(
       'addBookFormContainer'
     ).style.display = 'block';
@@ -106,7 +104,7 @@ function resetForm() {
   document.getElementById('bookGenre').value = '';
   document.getElementById('bookRating').value = '';
   document.getElementById('submitBookBtn').textContent =
-    'Submit'; // Reset to Submit
+    'Submit';
 }
 
 // Handle Add Book functionality
@@ -185,15 +183,14 @@ async function loadBooks() {
     const querySnapshot = await getDocs(
       collection(db, 'books')
     );
-    let booksFound = false; // Flag to check if any books are found
+    let booksFound = false;
 
     querySnapshot.forEach((doc) => {
       const book = doc.data();
       const bookId = doc.id;
 
-      // Check if the current user is the owner of the book
       if (book.userId === user.uid) {
-        booksFound = true; // Set flag to true if a book is found
+        booksFound = true;
         const bookCard = document.createElement('div');
         bookCard.className = 'bookCard';
         bookCard.innerHTML = `
@@ -215,7 +212,7 @@ async function loadBooks() {
       bookList.appendChild(noBooksMessage);
     }
 
-    // Add event listeners to the dynamically created buttons
+    // event listeners to the dynamically created buttons
     document
       .querySelectorAll('.deleteBtn')
       .forEach((button) => {
@@ -224,7 +221,7 @@ async function loadBooks() {
           try {
             await deleteDoc(doc(db, 'books', bookId));
             alert('Book deleted!');
-            loadBooks(); // Refresh the book list
+            loadBooks();
           } catch (error) {
             console.error('Error deleting book:', error);
           }
@@ -250,17 +247,14 @@ async function loadBooks() {
             document.getElementById('bookRating').value =
               bookData.rating;
 
-            // Show the form with the values populated
             document.getElementById(
               'addBookFormContainer'
             ).style.display = 'block';
 
-            // Change the submit button to update button
             const updateBtn =
               document.getElementById('submitBookBtn');
             updateBtn.textContent = 'Update';
 
-            // Remove the existing event listener for 'Submit' and add the update functionality
             updateBtn.removeEventListener(
               'click',
               handleAddBook

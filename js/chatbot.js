@@ -1,15 +1,14 @@
-// Function to get AI's response from Google's Gemini API
 async function getAIResponse(userMessage) {
-  const apiKey = 'AIzaSyBgpCNredvw_i2GzdXQy-zrXw9cRonjCPg'; // Your Google API Key
+  const apiKey = 'AIzaSyBgpCNredvw_i2GzdXQy-zrXw9cRonjCPg';
   const endpoint =
-    'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent'; // Gemini API endpoint
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
   const requestPayload = {
     contents: [
       {
         parts: [
           {
-            text: userMessage, // User's input message
+            text: userMessage,
           },
         ],
       },
@@ -30,28 +29,25 @@ async function getAIResponse(userMessage) {
     );
 
     if (!response.ok) {
-      // If the response status is not OK, throw an error
       throw new Error('Failed to fetch from Gemini API');
     }
 
     // Parse the response body as JSON
     const data = await response.json();
-    console.log('Gemini API response:', data); // Log to inspect the response
+    console.log('Gemini API response:', data);
 
-    // Check if the response contains the expected data in the candidates array
     if (
       data &&
       data.candidates &&
       data.candidates.length > 0
     ) {
-      // Check if the content and parts arrays exist in the first candidate
       if (
         data.candidates[0].content &&
         data.candidates[0].content.parts &&
         data.candidates[0].content.parts[0].text
       ) {
         const aiResponse =
-          data.candidates[0].content.parts[0].text.trim(); // Access the text content of the first part
+          data.candidates[0].content.parts[0].text.trim();
         return aiResponse;
       } else {
         throw new Error(
@@ -64,7 +60,6 @@ async function getAIResponse(userMessage) {
       );
     }
   } catch (error) {
-    // Handle errors (network, API issues, etc.)
     console.error(
       'Error communicating with Gemini:',
       error
@@ -91,9 +86,8 @@ document
 
       // Display the response
       chatbotResponseDiv.innerHTML = `<p><strong>AI:</strong> ${chatbotResponse}</p>`;
-      chatbotWindow.scrollTop = chatbotWindow.scrollHeight; // Scroll to the bottom
-
-      this.value = ''; // Clear input field after sending
+      chatbotWindow.scrollTop = chatbotWindow.scrollHeight;
+      this.value = '';
     }
   });
 
