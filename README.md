@@ -52,11 +52,8 @@ The app is deployed using GitHub Pages. To deploy, follow these steps:
 
 Push your changes to GitHub.
 Navigate to your repository’s Settings.
-
 Scroll down to the GitHub Pages section.
-
 Under Source, select the main branch or gh-pages if you are using a separate deployment branch.
-
 Your app will be live on GitHub Pages shortly after.
 
 Repository for this app
