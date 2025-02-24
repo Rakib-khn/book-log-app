@@ -238,7 +238,8 @@ hr {
   cursor: pointer;
   font-size: 18px;
   margin-top: 20px;
-  width: 20%;
+  min-width: 20%;
+  width: fit-content;
   transition: transform 0.3s ease;
 }
 
@@ -255,17 +256,19 @@ hr {
   color: black;
   padding: 20px;
   border-radius: 8px;
-  max-width: 450px;
+  /* max-width: 450px; */
   min-height: 150px;
-  width: 100%;
+  /* width: 100%; */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 #chatbotInput {
-  width: 400px;
-  padding: 12px;
+  width: 100%;
+  /* padding: 12px; */
+  padding-top: 12px;
+  padding-bottom: 12px;
   margin-top: 10px;
-  border-radius: 3px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 16px;
 }
