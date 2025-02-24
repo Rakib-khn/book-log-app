@@ -1,9 +1,12 @@
 # book-log-app
 
 Book Log App
+
 Description
+
 The Book Log App is a personal book tracking web application built using Vanilla JavaScript.
 It allows users to ->
+
 Track books: Add, rate, edit, delete, and organize books by genre or author.
 View personal library: After logging in, users can view their own book collection, which is stored on Firebase.
 Interactive chatbot: Users can ask questions or get help through a chatbot integrated into the app.
@@ -14,6 +17,7 @@ GitHub Actions Workflow: A CI/CD pipeline is set up to automatically deploy the 
 The app is built using HTML, CSS, Vanilla JavaScript, and Firebase for backend functionality. It's deployed on GitHub Pages.
 
 Features
+
 User Authentication: Secure login and registration using Firebase Authentication.
 Book Management: Users can add, edit, rate, and delete books in their personal library.
 Library Organization: Users can filter their books by genre or author.
@@ -39,17 +43,22 @@ Steps to Run Locally:
 3. Open the Project in Your Browser:
    The app is a simple static web application, so you can open it directly in a browser without the need for a local server. Just open the index.html file in your browser.
 
-Firebase Security Rules
+Firebase Security Rules:
 Make sure your Firebase Firestore database has the appropriate security rules to protect user data.
 
 GitHub Pages Deployment
+
 The app is deployed using GitHub Pages. To deploy, follow these steps:
 
 Push your changes to GitHub.
 Navigate to your repository’s Settings.
+
 Scroll down to the GitHub Pages section.
+
 Under Source, select the main branch or gh-pages if you are using a separate deployment branch.
+
 Your app will be live on GitHub Pages shortly after.
 
 Repository for this app
+
 GitHub Repository: https://github.com/Rakib-khn/book-log-app
