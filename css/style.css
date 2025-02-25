@@ -33,7 +33,6 @@ nav h1 {
 nav #userProfile > img {
   width: 30px;
   height: 30px;
-  /* color: white; */
 }
 
 /* Add New Book Button Container */
@@ -288,19 +287,10 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: min-content; */
-  /* position: fixed; */
-  /* top: 0; */
-  /* right: 5px; */
 }
 #chatbotSendButton img {
   max-width: 30px;
   max-height: 30px;
-  /* flood-color: #45a049; */
-  /* height: min-content; */
-  /* position: fixed; */
-  /* top: 0; */
-  /* right: 5px; */
 }
 
 #chatbotResponse {
