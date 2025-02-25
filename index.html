@@ -15,6 +15,15 @@
   <body>
     <nav>
       <h1>Book Log</h1>
+      <div id="userProfile">
+        <img
+          id="userAvatar"
+          src="https://www.svgrepo.com/show/105517/user-icon.svg"
+          alt="User Avatar"
+        />
+        <button id="signOutBtn" class="button" onclick="loadBooks()">
+          Sign Out
+      </div>
     </nav>
 
     <!-- Authentication Container -->
@@ -96,11 +105,26 @@
         style="display: none"
       >
         <div>
-          <input
-            type="text"
-            id="chatbotInput"
-            placeholder="Ask me anything..."
-          />
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <input
+              type="text"
+              id="chatbotInput"
+              placeholder="Ask me anything..."
+            />
+            <div id="chatbotSendButton">
+              <button style="background-color: unset">
+                <img
+                  src="https://www.svgrepo.com/show/311169/send.svg"
+                  alt="Send"
+                />
+              </button>
+            </div>
+          </div>
           <div id="chatbotResponse"></div>
         </div>
       </div>

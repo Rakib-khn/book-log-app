@@ -57,11 +57,21 @@ function signOutUser() {
 // Authentication State Change
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log('User is logged in:', user.uid);
+    console.log('User is logged in:', user.displayName);
+    document.getElementById('authContainer').style.display =
+      'none';
+    document.getElementById('addBookBtn').style.display =
+      'block';
+
     loadBooks();
+
+    document.getElementById('userProfile').style.display =
+      'block';
   } else {
     console.log('User is logged out');
     displayLoginMessage();
+    document.getElementById('userProfile').style.display =
+      'none';
   }
 });
 
@@ -175,7 +185,6 @@ async function handleUpdate(bookId) {
 // Load Books from Firestore
 async function loadBooks() {
   const bookList = document.getElementById('bookList');
-  bookList.innerHTML = '';
 
   const user = auth.currentUser;
 
@@ -185,25 +194,31 @@ async function loadBooks() {
     );
     let booksFound = false;
 
+    const books = [];
     querySnapshot.forEach((doc) => {
       const book = doc.data();
       const bookId = doc.id;
 
       if (book.userId === user.uid) {
         booksFound = true;
+        const bookinfo = `
+                <h3>${book.title}</h3>
+                <p>By ${book.author}</p>
+                <p>Genre: ${book.genre}</p>
+                <p>Rating: ${book.rating}</p>
+                <button class="deleteBtn" data-id="${bookId}">Delete</button>
+                <button class="editBtn" data-id="${bookId}">Edit</button>
+                `;
         const bookCard = document.createElement('div');
+        bookCard.innerHTML = bookinfo;
         bookCard.className = 'bookCard';
-        bookCard.innerHTML = `
-          <h3>${book.title}</h3>
-          <p>By ${book.author}</p>
-          <p>Genre: ${book.genre}</p>
-          <p>Rating: ${book.rating}</p>
-          <button class="deleteBtn" data-id="${bookId}">Delete</button>
-          <button class="editBtn" data-id="${bookId}">Edit</button>
-        `;
-        bookList.appendChild(bookCard);
+        books.push(bookCard);
       }
     });
+    console.info('books');
+    console.info(books);
+    bookList.innerHTML = '';
+    bookList.append(...books);
 
     if (!booksFound) {
       const noBooksMessage = document.createElement('p');
@@ -266,6 +281,7 @@ async function loadBooks() {
         });
       });
   } else {
+    bookList.innerHTML = '';
     displayLoginMessage();
   }
 }

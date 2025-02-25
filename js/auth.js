@@ -2,6 +2,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
+  signOut,
 } from 'https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js';
 
@@ -40,5 +41,24 @@ document
         error.message
       );
       alert('Failed to sign in. Please try again.');
+    }
+  });
+
+// Sign Out Function
+document
+  .getElementById('signOutBtn')
+  .addEventListener('click', async () => {
+    try {
+      await signOut(auth);
+      console.log('User signed out');
+      document.getElementById(
+        'authContainer'
+      ).style.display = 'block';
+      document.getElementById('addBookBtn').style.display =
+        'none';
+      document.getElementById('bookList').innerHTML = '';
+    } catch (error) {
+      console.error('Error signing out:', error.message);
+      alert('Failed to sign out. Please try again.');
     }
   });

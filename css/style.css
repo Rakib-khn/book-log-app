@@ -18,10 +18,22 @@ nav {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 nav h1 {
+  text-align: center;
   margin: 0;
+  width: 80%;
+  padding-left: 9rem;
+}
+
+nav #userProfile > img {
+  width: 30px;
+  height: 30px;
+  /* color: white; */
 }
 
 /* Add New Book Button Container */
@@ -143,7 +155,6 @@ nav h1 {
   margin-bottom: 30px;
 }
 
-/* Styling for input fields inside the form container */
 #addBookFormContainer .input-row {
   display: flex;
   flex-direction: column;
@@ -256,14 +267,12 @@ hr {
   color: black;
   padding: 20px;
   border-radius: 8px;
-  /* max-width: 450px; */
   min-height: 150px;
-  /* width: 100%; */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 #chatbotInput {
-  width: 100%;
+  width: 95%;
   /* padding: 12px; */
   padding-top: 12px;
   padding-bottom: 12px;
@@ -272,6 +281,28 @@ hr {
   border: 1px solid #ccc;
   font-size: 16px;
 }
+#chatbotSendButton {
+  background-image: url('https://www.svgrepo.com/show/311169/send.svg');
+  /* background-color: #4caf50; */
+  /* width: 10%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: min-content; */
+  /* position: fixed; */
+  /* top: 0; */
+  /* right: 5px; */
+}
+#chatbotSendButton img {
+  max-width: 30px;
+  max-height: 30px;
+  /* flood-color: #45a049; */
+  /* height: min-content; */
+  /* position: fixed; */
+  /* top: 0; */
+  /* right: 5px; */
+}
+
 #chatbotResponse {
   margin-top: 20px;
 }

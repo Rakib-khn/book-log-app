@@ -90,6 +90,15 @@ document
       this.value = '';
     }
   });
+document
+  .getElementById('chatbotSendButton')
+  .addEventListener('click', async function () {
+    document
+      .getElementById('chatbotInput')
+      .dispatchEvent(
+        new KeyboardEvent('keydown', { key: 'Enter' })
+      );
+  });
 
 // Toggle chatbot window visibility
 document
