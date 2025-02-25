@@ -87,7 +87,7 @@ document
     }
     document.getElementById(
       'addBookFormContainer'
-    ).style.display = 'block';
+    ).style.display = 'flex';
     resetForm();
     document
       .getElementById('submitBookBtn')
