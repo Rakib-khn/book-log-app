@@ -63,8 +63,6 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById('addBookBtn').style.display =
       'block';
 
-    loadBooks();
-
     document.getElementById('userProfile').style.display =
       'block';
   } else {
@@ -73,6 +71,7 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById('userProfile').style.display =
       'none';
   }
+  loadBooks();
 });
 
 // Add Book functionality
@@ -87,7 +86,7 @@ document
     }
     document.getElementById(
       'addBookFormContainer'
-    ).style.display = 'flex';
+    ).style.display = 'block';
     resetForm();
     document
       .getElementById('submitBookBtn')
@@ -215,8 +214,6 @@ async function loadBooks() {
         books.push(bookCard);
       }
     });
-    console.info('books');
-    console.info(books);
     bookList.innerHTML = '';
     bookList.append(...books);
 
